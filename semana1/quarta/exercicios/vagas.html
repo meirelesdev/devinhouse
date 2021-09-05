@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&display=swap" rel="stylesheet">
+    <title>Curriculo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Kaisei Tokumin', serif;
+        }
+
+        .topo {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .topo img {
+            width: 30%;
+            max-width: 200px;
+        }
+        .topo h1,
+        p {
+            margin: 0;
+        }
+        .topo p {
+            font-size: 15px;
+        }
+        .formCadastro {
+            max-width: 70%;
+            margin: 10px auto;
+            padding: 15px;
+            background-color: #faf6f6;
+        }
+        .fields {
+            background-color: rgb(169, 177, 177);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* margin: 0 auto;
+            padding: 10px;
+            margin-bottom: 25px;
+            max-width: 60%; */
+        }
+        .fields legend {
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 3px;
+            padding: 5px;
+            transition: 0.5s all;
+        }
+        .fields label {
+            align-self: flex-start;
+            padding-left: 140px ;
+        }
+        .fields legend:hover {
+            background-color: rgb(208, 203, 203);
+            color: white;
+            cursor: pointer;
+        }
+        .formCadastro input {
+            width: 80%;
+            padding: 5px;
+            margin-bottom: 20px;
+            border: none;
+            outline: none;
+        }
+        .formCadastro input:focus {
+            border: 1px solid black;
+        }
+        .botao {
+            background-color: #1e9585;
+            color: #ffffff;
+            padding: 10px 40px;
+            border-radius: 4px;
+            font-size: 15px;
+            margin: 10px auto;
+            display: block;
+            font-weight: bold;
+            line-height: 15px;
+            height: 36px;
+            width: 132px;
+        }
+        .mensagem {
+            margin: 0 auto;
+            padding: 25px;
+            border-radius: 10px;
+            width: 50%;
+            color: black;
+            text-shadow: 1px 1px 1px white;
+            background-color: #19c4ad;
+        }
+        .mensagem p {
+            font-size: 19px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Daniel Meireles  -->
+    <header class="topo">
+        <img src="http://www.serafinacorrea.rs.gov.br/wp-content/uploads/2020/05/img_xw8h6mups2.png" alt="">
+        <h1>Web Vagas</h1>
+        <p>Seu Portal de vagas na web!</p>
+    </header>
+    <div>
+    </div>
+    <form class="formCadastro">
+        <fieldset class="fields">
+            <Legend>Dados Pessoais</Legend>
+            <label for="nome">Nome:</label>
+
+            <input type="text" id="nome" name="nome">
+            <label for="tel">Telefone:</label>
+            <input type="number" id="tel" name="telefone">
+        </fieldset>
+        <fieldset class="fields">
+            <Legend>Experiencia</Legend>
+            <label for="empresa">Empresa:</label>            
+            <input type="text" id="empresa" name="empresa">
+            <label for="inicioEmpresa">Inicio:</label>            
+            <input type="date" id="inicioEmpresa" name="dataInicio">
+            <label for="fimEmpresa">Saida:</label>            
+            <input type="date" id="fimEmpresa" name="saidaEmpresa">
+        </fieldset>
+        <fieldset class="fields">
+            <Legend>Formação</Legend>
+            <label for="escola">Nome da Instituição:</label>            
+            <input type="text" name="escola">            
+                <label for="inicioEscola">Inicio:</label>                
+                <input type="date" id="inicioEscola" name="inicioEscola">                
+                <label for="termino">Terminio:</label>                
+                <input type="date" id="termino" name="dataTermino">
+        </fieldset>
+        <button class="botao" type="submit">Enviar</button>
+    </form>
+    <script>
+        let btnEnviar = document.querySelector('.botao')
+        btnEnviar.addEventListener('click', function(event) {
+            event.preventDefault()
+            let p = document.createElement('p')
+            let div = document.querySelector('div')
+            div.classList.add('mensagem')
+            p.innerHTML = "Formulario enviado com sucesso."
+            div.append(p)
+        })
+    </script>
+</body>
+</html>
