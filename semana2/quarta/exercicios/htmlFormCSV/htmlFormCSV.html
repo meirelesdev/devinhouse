@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de Media (console)</title>
+    <style>
+        input {
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulario CSV</h1>
+    <form class="formulario">
+        <label for="aluno">
+            Nome do Aluno:
+        </label><br>
+        <input type="text" placeholder="Digite os nomes separados por ; Ex: juca;joca;jana" name="nome">
+        <br>
+        <label for="aluno">
+            Nota 1:
+        </label><br>
+        <input type="text" placeholder="Digite a primeira nota separados por ; Ex: 8.5;7;9.5" name="nota1">
+        <br>
+        <label for="aluno">
+            Nota 2:
+        </label><br>
+        <input type="text" placeholder="Digite a segunda nota separados por ; Ex: 8.5;7;9.5" name="nota2">
+        <br>
+        <label for="aluno">
+            Nota 3:
+        </label><br>
+        <input type="text" placeholder="Digite a terceira nota separados por ; Ex: 8.5;7;9.5" name="nota3">
+        <br>
+        <br>
+        <button type="submit">Calcular Média</button>
+    </form>
+    <div class="result"></div>
+    <script src="htmlFormCSV.js"></script>
+</body>
+</html>
