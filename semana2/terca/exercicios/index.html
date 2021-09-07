@@ -5,8 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicios</title>
+    <style>
+        input {
+            width: 300px;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>Sistema de Identificação de Produtos</h1>
+    <p>Os três primeiros dígitos, representados pela letra M, correspondem ao modelo do produto.</p>
+    <p>Os dois dígitos seguintes, representados pela letra L, correspondem ao número do lote.</p>
+    <p>Os três dígitos seguintes, representados pela letra C, correspondem ao código da cor onde (001-Vermelho, 002-Preto, 003-Amarelo).</p>
+    <form id="formCodProduto">
+        <label for="">Codigo: </label>
+        <input type="text" name="codigo" placeholder="Digite o codigo do Produto Ex: MMMLLCCCV">
+        <br>
+        <br>
+        <button>Verificar codigo</button>
+    </form>
+    <div class="resultado"></div>
+    <script src="script.js"></script>
 </body>
 </html>

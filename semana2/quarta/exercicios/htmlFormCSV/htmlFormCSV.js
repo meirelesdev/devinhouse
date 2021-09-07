@@ -6,31 +6,30 @@ form.addEventListener('submit', function(event){
     const notas1 = form.elements['nota1'].value.split(';')
     const notas2 = form.elements['nota2'].value.split(';')
     const notas3 =  form.elements['nota3'].value.split(';')
-    let quantidadeAlunos = alunos.length
-    let quantidadeNotas1 = notas1.length
-    let quantidadeNotas2 = notas2.length
-    let quantidadeNotas3 = notas3.length
-    if (verificarQuantidades(quantidadeAlunos, quantidadeNotas1) ) {
+    if (verificarQuantidades(alunos.length, notas1.length) ) {
         document.querySelector('.result').innerHTML = 'Quantidade de notas 1 informada é invalida'
         return
     }
-    if (verificarQuantidades(quantidadeAlunos, quantidadeNotas2) ) {
+    if (verificarQuantidades(alunos.length, notas2.length) ) {
         document.querySelector('.result').innerHTML = 'Quantidade de notas 2 informada é invalida'
         return
     }
-    if (verificarQuantidades(quantidadeAlunos, quantidadeNotas3) ) {
+    if (verificarQuantidades(alunos.length, notas3.length) ) {
         document.querySelector('.result').innerHTML = 'Quantidade de notas 3 informada é invalida'
         return
     }
-    mensagem += `<strong>Aluno: </strong>${aluno.nome} <br>`    
-    mensagem += `<strong>Media:</strong> ${aluno.media.toFixed(2)} <br>`
-    if( aluno.media >= 7 ) {
-        mensagem += `<strong>Aluno ${aluno.nome}:</strong> Aprovado!`
-    } 
-    if( aluno.media < 7 ){
-        mensagem += `<strong>Aluno ${aluno.nome}:</strong> Reprovado!`
+    for(let i = 0; i < alunos.length ; i++) {
+        let media = (Number(notas1[i]) + Number(notas2[i]) + Number(notas3[i])) / 3
+        mensagem += `<strong>Aluno: </strong>${alunos[i]} <br>`    
+        mensagem += `<strong>Media:</strong> ${media.toFixed(2)} <br>`
+        if( media >= 7 ) {
+            mensagem += `<strong>Aluno ${alunos[i]}:</strong> Aprovado!`
+        } 
+        if( media < 7 ){
+            mensagem += `<strong>Aluno ${alunos[i]}:</strong> Reprovado!`
+        }
+        mensagem += '<br><br>'
     }
-    mensagem += '<br><br>'
     document.querySelector('.result').innerHTML = mensagem
 })
 function verificarQuantidades (qtdAlunos, qtdNota) {
