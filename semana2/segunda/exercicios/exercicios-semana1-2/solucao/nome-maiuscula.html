@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 15</title>
+</head>
+<body>
+    <h1>Exercicio 15</h1>
+    <p>
+        Pergunte ao usuário seu último sobrenome e em seguida exiba na tela um alert contendo o texto “Olá, X. Seu sobrenome contém y letras”, onde X é o sobrenome em letras maiúsculas, e y é a quantidade de letras desse sobrenome.
+    </p>
+    <button>Novamente</button>
+    <script>
+        let sobrenome = prompt("Qual seu sobrenome?")
+        alert(`Olá, ${sobrenome.toUpperCase()}. Seu sobrenome contém ${sobrenome.length} letras.`)
+        let btnAtualizar = document.querySelector('button')
+        btnAtualizar.addEventListener('click', function(){
+            window.location.reload()
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nome do Usuario</title>
+</head>
+<body>
+    <h1>Exercico 8</h1>
+    <p>
+        Faça com que o navegador do usuário pergunte o nome dele(a). Utilizando o método alert, exiba o nome inserido pelo usuário.
+    </p>
+    <script>
+        let nome = prompt('Ola Usuario, qual seu nome?')
+        if(nome == null || nome == '') nome = 'Usuario'
+        alert(`Seja bem vindo, ${nome}.`)
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exercicio 14</h1>
+    <p>
+        Ao entrar na página, seu script deve realizar 2 prompts ao usuário: <br>
+        um solicitando um “valor inicial”, e outro um valor para a “raíz”. <br>
+        Após o usuário inserir esses valores, <br>
+        o seu script deve calcular os 10 primeiros valores da sequência e exibir na tela. <br>
+        Relembrando: P.A. (Progressão Aritmética) é uma sequência numérica em que cada termo, <br>
+        a partir do segundo, é igual à soma do termo anterior com a raiz. Exemplo: Valor inicial = 1; raiz = 3; P.A. = 1, 4, 7, 10, 13, 16, 19, 22, 25, 28.
+    </p>
+    <h2>Resultado</h2>
+    <div class="resultado">
+        <p class="inicial"></p>
+        <p class="raiz"></p>
+        <p class="resposta"></p>
+    </div>
+    <script>
+        let valorInicial = Number(prompt("Calculadora P.A \n Entre com o valor Inicial:"))
+        let raiz = Number(prompt('Qual o valor da raiz:'))
+        let resultado = valorInicial
+        let inicio = valorInicial
+        for(let i = 1; i < 10; i++) {
+            valor = calcPA(inicio, raiz)
+            inicio = valor
+            resultado += ", " + valor
+        }        
+        document.querySelector('.inicial').innerHTML = "Valor Inicial: " + valorInicial
+        document.querySelector('.raiz').innerHTML = "Valor Raiz: " + raiz
+        document.querySelector('.resposta').innerHTML = "P.A.: " + resultado
+        function calcPA(valor, raiz) {
+            return valor + raiz
+        }
+    </script>
+</body>
+</html>

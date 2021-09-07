@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perguntar Ano</title>
+</head>
+<body>
+    <h1>Exercicio 11</h1>
+    <p>
+        Faça 2 prompts ao usuário: no primeiro, pergunte o ano de nascimento. No segundo, pergunte o ano atual. Em seguida, exiba na tela um alert contendo o texto “Sua idade é x ou y”, onde x é a idade do usuário caso ele já tenha feito aniversário neste ano, e y é a idade caso ele ainda não tenha aniversariado no ano corrente.
+    </p>
+    <script>
+        let anoNascimento = Number(prompt('Qual seu ano de nascimento?'))
+        let anoAtual = Number(prompt('Qual o ano Atual?'))
+        alert(`Sua Idade é ${anoAtual - anoNascimento} anos`)
+    </script>
+</body>
+</html>
