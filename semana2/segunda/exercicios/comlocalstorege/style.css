@@ -5,7 +5,6 @@
     font-family: 'Poppins', sans-serif;
 }
 body {
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,7 +12,7 @@ body {
 }
 form{
     width: 60%;
-    margin: 0 auto;
+    margin: 20px auto;
     background: #fff;
     padding: 20px 40px;
     border-radius: 6px;
@@ -72,4 +71,52 @@ button:hover{
 }
 small {
     text-align: center;
+}
+.relatorio {
+    max-width: 100px;
+    font-size: 8px;
+    background-color: cadetblue;
+    text-shadow: 2px 3px 3px black;
+}
+.relatorioTable {
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+.relatorioTable .header {
+    margin-top: 20px;
+    height: 100px;
+    width: 100%;
+    display: flex;
+}
+.header h3 {
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+.imprimir, .voltar {
+    margin: 10px;
+    float: right;
+    color: black;
+    max-width: 100px;
+    background-color: rgb(189, 184, 184);
+}
+.relatorioTable table {
+    background-color: white;
+    border: 2px solid black;
+    margin: 5px auto;
+}
+table thead, table tbody {
+    width: 100%;
+}
+table thead {
+    font-size: 10pt;
+}
+table tbody {
+    font-size: 8pt;
+}
+table tbody  tr {
+    margin-bottom: 5px;
+    border-bottom: 1px solid gray;
 }

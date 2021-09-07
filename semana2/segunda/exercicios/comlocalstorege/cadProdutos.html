@@ -5,10 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
-        <title>Cadastro | Produtos</title>
+        <title>Cadastro | Produtos</title>>
     </head>
     <body>
         <form action="index.html" id="formulario">
+            <button class="relatorio">Relatorio de Produtos Cadastrados</button>
             <section class="coluna">
                 <h2>Cadastro de Produto | Com localStorege</h2>
                 <label for="cod_produto">Código</label>
@@ -59,6 +60,30 @@
                 <button type="submit" id="enviar"> Enviar</button>
             </section>
         </form>
+        <div class="relatorioTable">
+            <button class="voltar">Voltar</button>
+            <button class="imprimir">Imprimir</button>
+            <div class="header">
+                <h3>Relatorio de Produtos cadastrados</h3>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nome</th>
+                        <th>Modelo</th>
+                        <th class="descricao">Descrição</th>
+                        <th>Fornecedor</th>
+                        <th>Quantidade</th>
+                        <th>Preço Custo</th>
+                        <th>Preço Venda</th>
+                        <th>Margem de Lucro</th>
+                        <th>Data Ultima Entrada</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
         <script src="./script.js"></script>
     </body>
 </html>
