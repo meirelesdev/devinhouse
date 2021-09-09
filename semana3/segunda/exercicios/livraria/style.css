@@ -31,6 +31,28 @@ nav a:hover {
     margin: 20px auto;
     max-width: 80%;
 }
+.red {
+    background-color: red;
+}
+.green {
+    background-color: greenyellow;
+}
+div.msg {
+    height: 100px;
+    display: none;
+    width: 50%;
+    border-radius: 10px;
+    margin: 10px auto;
+    justify-content: center;
+    align-items: center;
+}
+div.msg p {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    text-shadow: 2px 1px 3px black;
+    letter-spacing: 2px;
+}
 form {
     display: flex;
     flex-direction: column;
@@ -43,7 +65,8 @@ form {
 form label {
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    margin: 0 auto;
+    min-width: 90%;
 }
 input {
     height: 30px;
@@ -74,8 +97,13 @@ button {
     background-color: gray;
     border-radius: 10px ;
     margin: 10px;
+    transition: 0.3s all;
 }
-section 
+.livro:hover {
+    background-color: rgb(187, 185, 185);
+    box-shadow: 2px 3px 3px black;
+    cursor: pointer;
+}
 .image {
     margin: 10px;
 }
