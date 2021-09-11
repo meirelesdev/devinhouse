@@ -37,9 +37,11 @@
     <h1>Que Horas são?</h1>
     <div class="clock"></div>
     <script>
-            let divClock = document.querySelector('.clock')
+        let divClock = document.querySelector('.clock')
+        setInterval(()=>{
             let data = new Date()
             divClock.innerHTML = data.toLocaleTimeString()
+        },1000)
     </script>
 </body>
 </html>
