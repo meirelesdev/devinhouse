@@ -16,11 +16,17 @@
   <body>
     <header>
       <div class="header-wrapper">
-        <h1>HouseFlix</h1>
+        <h1>
+          <a href="index.html" class="logo">
+            HouseFlix
+          </a>
+        </h1>
         <button class="btn-add-movie" onclick="showAddMoviesModal()">Adicionar filme</button>
       </div>
     </header>
     <form id="movieForm">
+      <p class="fechar-form" onclick="showAddMoviesModal()">X</p>
+      <h2>Cadastra Filme</h2>
       <h3>Titulo do filme</h3>
       <input type="text" id="movieTitle"  />
       <h3>Descrição</h3>
@@ -29,7 +35,7 @@
       <input type="text" id="actors"  />
       <h3>Imagem</h3>
       <input type="text" id="image" />
-      <button id="submit" type="submit">Cadastrar filme</button>
+      <button id="submit" type="submit">Salvar filme</button>
       <p class="alert"></p>
     </form>
     <div class="content"></div>
