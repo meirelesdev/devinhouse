@@ -7,8 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Simples</title>
     <style>
+        * {
+            margin: 0 ;
+            padding: 0;
+            box-sizing: border-box ;
+        }
         .container {
-            width: 500px;
+            width: 100%;
+            max-width: 500px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
@@ -30,6 +36,7 @@
         }
 
         .field div input {
+            width: 50%;
             padding: 10px;
             border-radius: 3px;
             border: 2px solid black;
