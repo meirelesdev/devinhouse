@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relogio</title>
+    <style>
+        @font-face{
+            font-family:'digital-clock-font';
+            src: url('fonts/DIGITALDREAMFATSKEW.ttf');
+        }
+        .clock {
+            font-family:'digital-clock-font';
+            font-size: 25pt;
+            border-radius: 5px;
+            background-color: rgb(126, 126, 126);
+            color: white;
+            margin: 0 auto;
+            letter-spacing: 5px;
+            width: 300px;
+            text-align: center;
+            padding: 10px;
+            text-shadow: 4px -1px 1px black;
+            font-weight: bolder;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Que Horas são?</h1>
+    <div class="clock"></div>
+    <script>
+        window.onload = ()=>{
+            let divClock = document.querySelector('.clock')
+            setInterval(()=>{
+                let data = new Date()
+                divClock.innerHTML = data.toLocaleTimeString()
+            },1000)
+        }
+    </script>
+</body>
+</html>
