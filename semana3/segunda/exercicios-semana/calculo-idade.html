@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Idade</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        form {
+            margin: 0 auto;
+            max-width: 80%;
+        }
+        form, .fields {
+            display: flex;
+            flex-direction: column;
+        }
+        .fields label {
+            font-size: 15pt;
+        }
+        .fields input, button {
+            padding: 10px;
+            border-radius: 3px ;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+        .fields button {
+            border: none;
+            background-color: rgb(94, 94, 196);
+            color: white;
+            font-weight: bolder;
+            font-size: 15pt;
+            max-width: 200px;
+            align-self: center;
+            cursor: pointer;
+        }
+        .fields button:hover {
+            background-color: rgb(93, 93, 145);
+            color: rgb(192, 184, 184);
+            box-shadow: 1px 1px 5px black;
+        }
+        .fields button:active {
+            box-shadow: none;
+        }
+        .error {
+            background-color: red;
+            width: 250px;
+            padding: 15px;
+            text-align: center;
+            color: white;
+            font-weight: bolder;
+            border-radius: 10px ;
+            margin: 20px auto;
+        }
+        .age {
+            background-color: green;
+            width: 250px;
+            padding: 15px;
+            text-align: center;
+            color: white;
+            font-weight: bolder;
+            border-radius: 10px ;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcule sua Idade</h1>
+    <form>
+        <div class="fields">
+            <label for="datanasc">Insira sua data de nascimento:</label>
+            <input id="datanasc" type="date" >
+        </div>
+        <div class="fields">
+            <button>Calcular idade</button>
+        </div>
+    </form>
+    <div class="result"></div>
+    <script>
+        let form = document.querySelector('form')
+        form.addEventListener('submit', function(event){
+            event.preventDefault()
+            let inputValue = document.querySelector('#datanasc').value
+            let resultDiv = document.querySelector('.result')
+            if (resultDiv.classList.contains('age')) {
+                resultDiv.classList.remove('age')
+            }
+            if(!inputValue) {
+                resultDiv.classList.add('error')
+                resultDiv.innerHTML = 'Insira uma data de nascimento'
+                return
+            }
+            if (resultDiv.classList.contains('error')) {
+                resultDiv.classList.remove('error')
+            }
+            resultDiv.classList.add('age')
+            resultDiv.innerHTML = `Você tem ${calculatorAge(inputValue)} Anos.`
+        })
+        const calculatorAge = (value) => {
+            let date = new Date()
+            let nascimento = new Date(value)
+            return date.getFullYear() - nascimento.getFullYear()            
+        } 
+    </script>    
+</body>
+</html>
