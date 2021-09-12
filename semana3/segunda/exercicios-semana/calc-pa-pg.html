@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora P.A e P.G.</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        .container .calc {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .calc .btns {
+            display: flex;
+            margin: 10px;
+        }
+
+        .alert {
+            background-color: red;
+            border-radius: 5px;
+            box-shadow: 1px 5px 10px black;
+            margin-bottom: 10px;
+            width: 250px;
+            height: 50px;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calculadora P.A e P.G.</h1>
+        <div class="alert"></div>
+        <div class="calc">
+            <label for="valorinicial">Valor Inicial: </label>
+            <input type="number" id="valorinicial" step="0.01" placeholder="Valor inicial">
+            <label for="valorraiz">Valor Raiz: </label>
+            <input type="number" id="valorraiz" step="0.01" placeholder="Valor Raiz">
+            <div class="btns">
+                <button id="calcpa">Calcular P.A.</button>
+                <button id="calcpg">Calcular P.G.</button>
+            </div>
+        </div>
+        <div class="result">
+            <p class="inicial"></p>
+            <p class="raiz"></p>
+            <p class="resposta"></p>
+        </div>
+    </div>
+    <script>
+        let btnPA = document.querySelector('#calcpa')
+        let btnPG = document.querySelector('#calcpg')
+        btnPG.addEventListener('click', function () {
+            let valorInicial = Number(document.querySelector('#valorinicial').value)
+            let raiz = Number(document.querySelector('#valorraiz').value)
+            if (!valorInicial) {
+                showAlert('Favor digite o valor Inicial.', 5000)
+                return
+            }
+            if (!raiz) {
+                showAlert('Favor digite o valor Raiz.', 5000)
+                return
+            }
+            let resultado = valorInicial
+            let inicio = valorInicial
+            for (let i = 1; i < 10; i++) {
+                valor = calcPG(inicio, raiz)
+                inicio = valor
+                resultado += ", " + valor
+            }
+            document.querySelector('.inicial').innerHTML = "Valor Inicial: " + valorInicial
+            document.querySelector('.raiz').innerHTML = "Valor Raiz: " + raiz
+            document.querySelector('.resposta').innerHTML = "P.G.: " + resultado
+        })
+        btnPA.addEventListener('click', function () {
+            let valorInicial = Number(document.querySelector('#valorinicial').value)
+            let raiz = Number(document.querySelector('#valorraiz').value)
+            if (!valorInicial) {
+                showAlert('Favor digite o valor Inicial.', 5000)
+                return
+            }
+            if (!raiz) {
+                showAlert('Favor digite o valor Raiz.', 5000)
+                return
+            }
+            let resultado = valorInicial
+            let inicio = valorInicial
+            for (let i = 1; i < 10; i++) {
+                valor = calcPA(inicio, raiz)
+                inicio = valor
+                resultado += ", " + valor
+            }
+            document.querySelector('.inicial').innerHTML = "Valor Inicial: " + valorInicial
+            document.querySelector('.raiz').innerHTML = "Valor Raiz: " + raiz
+            document.querySelector('.resposta').innerHTML = "P.A.: " + resultado
+        })
+        function showAlert(msg = '', time = 3000) {
+            let divAlert = document.querySelector('.alert')
+            divAlert.style = 'display: flex'
+            divAlert.innerHTML = msg
+            setTimeout(function(){
+                divAlert.style = 'display: none'
+            }, time)
+        }
+        function calcPG(valor, raiz) {
+            return valor * raiz
+        }
+        function calcPA(valor, raiz) {
+            return valor + raiz
+        }
+    </script>
+</body>
+
+</html>
