@@ -21,12 +21,34 @@
             display: flex;
             flex-direction: column;
         }
-
+        .calc input {
+            padding: 10px;
+            border-radius: 3px;
+            outline: none;
+            border: 1px solid seagreen;
+        }
+        .calc input:focus {
+            background-color: seagreen;
+            color: white;
+            text-shadow: 1px 1px 10px  black;
+        }
         .calc .btns {
             display: flex;
-            margin: 10px;
+            justify-content: flex-start;
         }
-
+        .btns button {
+            margin: 10px;
+            padding: 10px;
+            cursor: pointer;
+            background-color: seagreen;
+            color: white;
+            border: 0;
+            border-radius: 5px;
+        }
+        .btns button:hover {
+            background-color: rgb(77, 131, 100);
+            color: rgb(63, 63, 63);
+        }
         .alert {
             background-color: red;
             border-radius: 5px;
@@ -85,7 +107,8 @@
             }
             document.querySelector('.inicial').innerHTML = "Valor Inicial: " + valorInicial
             document.querySelector('.raiz').innerHTML = "Valor Raiz: " + raiz
-            document.querySelector('.resposta').innerHTML = "P.G.: " + resultado
+            document.querySelector('.resposta').innerHTML = "P.G.: " + resultado + '...'
+            clearField()
         })
         btnPA.addEventListener('click', function () {
             let valorInicial = Number(document.querySelector('#valorinicial').value)
@@ -107,8 +130,14 @@
             }
             document.querySelector('.inicial').innerHTML = "Valor Inicial: " + valorInicial
             document.querySelector('.raiz').innerHTML = "Valor Raiz: " + raiz
-            document.querySelector('.resposta').innerHTML = "P.A.: " + resultado
+            document.querySelector('.resposta').innerHTML = "P.A.: " + resultado + '...'
+            clearField()
         })
+        function clearField() {
+            document.querySelector('#valorinicial').value = ''
+            document.querySelector('#valorraiz').value = ''
+            document.querySelector('#valorinicial').focus()
+        }
         function showAlert(msg = '', time = 3000) {
             let divAlert = document.querySelector('.alert')
             divAlert.style = 'display: flex'
