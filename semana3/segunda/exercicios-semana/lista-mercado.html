@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Mercado</title>
+    <style>
+        .addItem {
+            margin: 0 auto;
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 5px solid rgb(118, 116, 116);
+        }
+        .addItem input {
+            min-width: 250px;
+            padding: 8px;
+        }
+
+        button.add {
+            background: rgb(29, 89, 243);
+            color: white;
+            font-size: 13pt;
+            cursor: pointer;
+            text-shadow: 2px 1px 0px black;
+            border: 2px solid rgb(85, 83, 83);
+            border-radius: 3px;
+            padding: 5px;
+        }
+        button.add:hover {
+            background: rgb(81, 117, 208);
+            color: rgb(145, 140, 140);
+        }
+        .list {
+            display: flex;
+            margin: 0 auto;
+            width: 90%;
+        }
+        ul {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-content: flex-start;
+        }
+        ul .description {
+            margin: 0 auto;
+            width: 100%;
+        }
+        ul .actions {
+            width: 20%;
+            display: flex;
+        }
+        .actions button {
+            margin: 5px;
+            padding: 8px;
+            color: white;
+            border: 1px solid white;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button.delete {
+            background-color: red;
+        }
+        .delete:hover {
+            background-color: rgb(208, 92, 92);
+            border: 1px solid black;
+        }
+        ul li {
+            margin-bottom: 2px;
+            width: 100%;
+            display: flex;
+            cursor: pointer;
+            justify-content: center;
+        }
+        ul li p {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        ul li:hover p {
+            background-color: rgb(194, 193, 193);
+            
+        }
+        ul li p.done {
+            text-decoration: line-through;
+            background-color: grey;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lista mercado</h1>
+    <div class="addItem">
+        <input type="text" name="item" id="item" placeholder="Adicione um item a Lista">
+        <button class="add">Adicionar</button>
+    </div>
+    <div class="list">
+        <ul></ul>
+    </div>
+    <script>
+        const lista = getLista()
+        loadLista(lista)
+        const btnAdd = document.querySelector('.add')
+        btnAdd.addEventListener('click', function () {
+            const inputAdd = document.querySelector('#item')
+            if(inputAdd.value == '') return
+            const item = inputAdd.value
+            addItem(item)
+            const lista = getLista()
+            loadLista(lista)
+            inputAdd.value = ''
+            inputAdd.focus()
+        })
+
+        function removeItem(id) {
+            const lista = getLista()
+            lista.splice(id, 1)
+            setLista(lista)
+            loadLista(lista)
+        }
+        function loadLista(lista) {
+            const ul = document.querySelector('.list ul')
+            if (lista.length > 0) {
+                ul.innerHTML = ''
+                lista.forEach((item, index) => {
+                    const estado = (item.estado) ? 'done': ''
+                    ul.innerHTML += `<li>
+                                <p onclick="done(${index})" class="description ${estado}">${index + 1} - ${item.description}</p>
+                                <div class="actions">
+                                <button id="${index}" onclick="removeItem(${index})" class="delete">Excluir</button>
+                            </div>
+                    </li>`
+                })
+                return
+            }
+            ul.innerHTML = '<li>Sem itens Cadastrados.</li>'
+        }
+        function addItem(description) {
+            const item = {
+                description: description,
+                estado: false
+            }
+            const lista = getLista()
+            lista.push(item)
+            setLista(lista)
+            return lista
+        }
+        function setLista(lista = []) {
+            localStorage.setItem('lista', JSON.stringify(lista))
+        }
+        function getLista() {
+            return JSON.parse(localStorage.getItem('lista')) || []
+        }
+        function done(id) {
+            const lista = getLista()
+            if(lista[id].estado){
+                lista[id].estado = false
+            } else {
+                lista[id].estado = true
+            }
+            setLista(lista)
+            loadLista(lista)
+            console.log("Marcar feito item id: " + id)
+        }
+    </script>
+</body>
+
+</html>
