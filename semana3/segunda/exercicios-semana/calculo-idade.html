@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -90,6 +90,10 @@
             if(!inputValue) {
                 resultDiv.classList.add('error')
                 resultDiv.innerHTML = 'Insira uma data de nascimento'
+                setInterval(function(){
+                    resultDiv.classList.remove('error')
+                    resultDiv.innerHTML = ''
+                }, 4000)
                 return
             }
             if (resultDiv.classList.contains('error')) {
@@ -97,11 +101,15 @@
             }
             resultDiv.classList.add('age')
             resultDiv.innerHTML = `Você tem ${calculatorAge(inputValue)} Anos.`
+            setInterval(function(){
+                    resultDiv.classList.remove('age')
+                    resultDiv.innerHTML = ''
+                }, 4000)
         })
         const calculatorAge = (value) => {
             let date = new Date()
             let nascimento = new Date(value)
-            return date.getFullYear() - nascimento.getFullYear()            
+            return date.getFullYear() - nascimento.getFullYear()
         } 
     </script>    
 </body>
