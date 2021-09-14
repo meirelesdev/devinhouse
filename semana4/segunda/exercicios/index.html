@@ -1,12 +1,146 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicios</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .ex1>ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        div {
+            background-color: grey;
+        }
+
+        .ex1>ul li {
+            background: lightblue;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .ex2>ul {
+            list-style: none;
+            display: flex;
+            height: 400px;
+        }
+
+        .ex2>ul li {
+            flex: 1;
+            height: 100%;
+            max-height: 330px;
+            background: lightblue;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        div.ex3 > div {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div.ex3 div p {
+            background: lightblue;
+            width: 100px;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        div.ex4 .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        div.ex4 .item {
+            flex-basis: 33%;
+            background: lightblue;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px;
+        }
+    </style>
 </head>
+
 <body>
-    
+
+    <h1>Exercicios do dia</h1>
+    <ul>
+        <li>
+            <a href="#ex1">
+                Utilizando display flex
+            </a>
+        </li>
+        <li>
+            <a href="#ex2">
+                Centralizando elementos
+            </a>
+        </li>
+        <li>
+            <a href="#ex3">
+                Utilizando display flex
+            </a>
+        </li>
+        <li>
+            <a href="#ex4">
+                Utilizando display flex
+            </a>
+        </li>
+        <li>
+            <a href="menu-display.html">
+                Menu com Display flex (para casa)
+            </a>
+        </li>
+    </ul>
+    <section>
+        <div class="ex1" id="ex1">
+            <h2>Exercicio 1</h2>
+            <ul>
+                <li>Inicio</li>
+                <li>Sobre</li>
+                <li>Contato</li>
+            </ul>
+        </div>
+        <div class="ex2" id="ex2">
+            <h2>Exercicio 2</h2>
+            <ul>
+                <li>Oi, eu sou um elemento bem pequeno</li>
+                <li>Eu também!</li>
+                <li>Eu tenho bastante coisa, talvez eu seja um lorem ipsum? Lorem Ipsum has been the industry's standard
+                    dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+                    make a type specimen book. It has survived not only five centuries, but also the leap into
+                    electronic typesetting, remaining essentially unchanged. </li>
+            </ul>
+        </div>
+        <div class="ex3" id="ex3">
+            <h2>Exercicio 3</h2>
+            <div>
+                <p>Eu deveria estar centralizado!</p>
+            </div>
+        </div>
+        <div class="ex4" id="ex4">
+            <h2>Exercicio 4</h2>
+            <div class="container">
+                <div class="item-1 item">Item 1</div>
+                <div class="item-2 item">Item 2</div>
+                <div class="item-3 item">Item 3</div>
+                <div class="item-4 item">Item 4</div>
+                <div class="item-5 item">Item 5</div>
+                <div class="item-5 item">Item 6</div>
+              </div>
+        </div>
+    </section>
 </body>
+
 </html>

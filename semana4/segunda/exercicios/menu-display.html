@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu com display flex</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            display: flex;
+            height: 80px;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(41, 111, 107);
+            color: white;
+        }
+        header .logo {
+            padding: 10px;
+            font-size: 18pt;
+        }
+        header .menu ul {
+            list-style: none;
+            display: flex;
+        }
+        header nav.menu ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 31px 10px;
+            height: 100%;
+            margin: 0;
+        }
+        header nav.menu a:hover {
+            background: rgb(199, 198, 198);
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Logo</div>
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Products</a>
+                </li>
+                <li>
+                    <a href="#">Categories</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+
+    </section>
+    <footer>
+    </footer>
+</body>
+</html>
