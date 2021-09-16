@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 30px;
+  background: lightblue;
+}
+.logo h3 {
+  color: #fff;
+  cursor: pointer;
+}
+.menu ul {
+  list-style: none;
+  display: flex;
+}
+.menu li a {
+  margin-right: 5px;
+  text-decoration: none;
+  color: #1e1010;
+  font-weight: bold;
+}
+.menu li {
+  border-right: 1px solid #eee;
+  padding: 0 5px;
+}
+.menu li:last-child {
+  border-right: 0;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background: url("https://cdn.wallpapersafari.com/65/46/uCHjiV.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+main h3 {
+  color: #fff;
+}
+#sobre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 30px;
+}
+#sobre img {
+  width: 200px;
+  border-radius: 50%;
+  border: 2px solid #d14646;
+}
+#servico {
+  background: #1790de;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 300px;
+}
+.header-contato {
+  margin-bottom: 0px;
+}

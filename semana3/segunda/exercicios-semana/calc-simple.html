@@ -93,13 +93,20 @@
             </div>
         </div>
         <div class="field operators">
-            <button id="sum">Somar</button>
-            <button id="multiplication">Multiplicar</button>
-            <button id="division">Dividir</button>
-            <button id="subtraction">Diminuir</button>
+            <!-- <form id="teste"> -->
+                <button id="sum">Somar</button>
+                <button id="multiplication">Multiplicar</button>
+                <button id="division">Dividir</button>
+                <button id="subtraction">Diminuir</button>
+            <!-- </form> -->
         </div>
     </div>
     <script>
+        // let form = document.querySelector('#teste')
+        // form.addEventListener('submit', function(e){
+        //     e.preventDefault()
+        //     console.log(e.submitter.id)
+        // })
         let btnOperators = document.querySelectorAll('button')
         btnOperators.forEach(btn => {
             btn.addEventListener('click', calculator)

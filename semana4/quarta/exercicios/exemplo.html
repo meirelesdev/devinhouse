@@ -1,0 +1,36 @@
+<script>
+    const form = document.querySelector("form");//ok
+
+    const addItem = document.querySelector("#add");
+    
+    const recover = () => {
+        let recoverItems = localStorage.getItem("items");
+        createLi.innerHTML = `<input type="checkbox" id="tasks" name="tasks"><label for="tasks">${recoverItems}</label> <button type="submit" id="excludeItem">X</button>`;//ok
+    };
+    let itemArr = [];//ok
+    const renderItems = (itemArr, clearItem) => {
+    };
+    const saveItemsLocalstorage = () => {
+        localStorage.setItem("items", JSON.stringify(itemArr));
+    };
+    //document.onchange = saveItemsLocalstorage;
+    form.addEventListener("submit", (event) => {//ok
+        event.preventDefault();//ok
+        const catchItem = document.querySelector("#itemPlace").value;//ok
+
+        let createLi = document.createElement("li");//ok
+        document.querySelector("#add").appendChild(createLi);//ok
+
+        createLi.innerHTML = `<input type="checkbox" id="tasks" name="tasks"><label for="tasks">${catchItem}</label> <button type="submit" id="excludeItem">X</button>`;//ok
+        if (event.submitter.id === "button") {//ok
+            itemArr.push(catchItem);//ok
+            renderItems(itemArr, true);
+        }else if (event.submitter.id === "excludeItem") {
+            itemArr.pop(Object.keys());
+            renderItems(itemArr, true);
+        };
+        form.reset();//ok
+        window.onload = recover
+        document.onchange = saveItemsLocalstorage;
+    });
+</script>
