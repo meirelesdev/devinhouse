@@ -38,18 +38,28 @@
         }
         constObjeto()
 
-        const pessoa = {
-            nome: "Daniel",
-            sobrenome: "Meireles",
-            "nome-completo": "Daniel Meireles"
+        function calcSimples(operacao, numeros) {
+            let resultado = 0;
+            if(operacao == 'soma') {
+                resultado = 0
+            }
+            if(operacao == 'multiplicacao') {
+                resultado = 1
+            }
+            if(operacao !== 'soma' && operacao !== 'multiplicacao') {
+                return 'Operacao desejada não implementada.'
+            }
+            numeros.forEach(n => {
+                if(operacao == 'soma') {
+                    resultado += n
+                }
+                if(operacao == 'multiplicacao') {
+                    resultado *= n
+                }
+            });
+            return resultado
         }
-        // dica para acessar objetos com chave de nome composto
-        // normalmente acessamos assim
-        console.log(pessoa.nome)
-        // mas quando o atributo é composeto 
-        //console.log(pessoa.nome-completo) // isso vai dar erro
-        //Como acessar o atributo nome-completo?
-        console.log(pessoa["nome-completo"])
+        console.log(calcSimples('soma', [1,2,3,5]))
     </script>
 </body>
 </html>

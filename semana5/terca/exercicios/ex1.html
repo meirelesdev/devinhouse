@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+<body>
+    <h1>Resultado no console</h1>
+    <script>
+        const funcionario = {
+            name: "Daniel",
+            age: 36,
+            cargo: "Programador",
+            salario: 6500,
+        }
+        function clonarFuncionario(func) {
+            return { nome: 'Meireles', idade: 37, ...func }
+        }
+        console.log(clonarFuncionario(funcionario))
+        console.log("=====================================")
+        const pessoa = {
+            name:"Daniel",
+            age:36,
+            cargo:"Programador",
+            salario: 6500
+        }
+        const {nome, idade, ...rest} = pessoa
+        console.log(nome, idade, rest)
+        console.log("=====================================")
+        const printName = funcionario => console.log(funcionario.name)
+        printName(funcionario)
+        console.log("=====================================")
+        const printFuncInfo = (func) => {
+            const {name, cargo, salario } = func
+            console.log(`${name} atua no cargo de ${cargo} e recebe o salário de ${salario}.`)
+        }
+        printFuncInfo(pessoa)
+        console.log("=====================================")
+        const revertChar = (string) => {
+            // return string.split("").reverse().join("")
+            const arrString = [...string]
+            const invertArr = arrString.reverse()
+            const stringReverse = invertArr.join("")
+            // console.log(arrString)
+            // console.log(invertArr)
+            // console.log(stringReverse)
+            return stringReverse
+        }
+        console.log(revertChar("Daniel"))
+        console.log("=====================================")
+        const redirectTo = (url) => {
+            if(confirm(`Deseja abrir a url${url}`)) {
+                open(url)
+            }
+        }
+        redirectTo('https://google.com.br')
+    </script>
+
+</body>
+
+</html>

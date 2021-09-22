@@ -7,6 +7,26 @@
     <title>Exercicios</title>
 </head>
 <body>
-    
+    <h1>Exemplos</h1>
+    <ul>
+        <li>
+            <a href="ex1.html">Clonar Obj com função</a>
+        </li>
+    </ul>
+    <script>
+        const nomes = [ "nome1", "nome2", "nome3"]
+        const clonados = [...nomes]
+        console.log(nomes)
+        console.log(clonados)
+        console.log("Os dois sao iguais? "+ nomes == clonados)
+
+        function imprimirRankin(vencedor, segundo, terceiro , ...demais){
+            console.log("Vencedor: "+ vencedor)
+            console.log("Segundo: "+ segundo)
+            console.log("Terceiro: "+ terceiro)
+            console.log("vemais: ", ...demais)
+        }
+        imprimirRankin("Daniel", "meireles", "mais um", "mais2", "mais3")
+    </script>
 </body>
 </html>
