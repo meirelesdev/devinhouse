@@ -103,12 +103,33 @@ O código do Exemplo 2 funciona sem erros pois como a variavel tem escopo de blo
 ---
 Classes em JavaScript são introduzidas no ECMAScript 2015 e são simplificações da linguagem para as heranças baseadas nos protótipos. A sintaxe para classes não introduz um novo modelo de herança de orientação a objetos em JavaScript. Classes em JavaScript provêm uma maneira mais simples e clara de criar objetos e lidar com herança.
 
+> Exemplo 1:
+
 ~~~JavaScript
 1  
 2  class Retangulo {
 3   constructor(altura, largura) {
 4      this.altura = altura;
-    this.largura = largura;
-  }
-}
+5      this.largura = largura;
+6    }
+7  }
 ~~~
+Uma informação importante sobre as classes é que elas nao sofrem hoisting, ou seja, devemos declarar uma classe antes de utilizada.
+
+> Exemplo 2:
+
+~~~JavaScript
+1  
+2  class Retangulo {
+3   constructor(altura, largura) {
+4      this.altura = altura;
+5      this.largura = largura;
+6    }
+7    get area() {
+8      return this.altura * this.largura;
+9    }
+10  }
+11  const retangulo1 = new Retangulo(10, 5)
+12  console.log(retangulo1.area()) // a saida é 50
+~~~
+
