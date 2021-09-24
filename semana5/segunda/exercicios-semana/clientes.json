@@ -1,0 +1,38 @@
+[
+    {
+        "nome": "João da Silva",
+        "saldo": "10000"
+    },
+    {
+        "nome": "Maria da Silva",
+        "saldo": "30000"
+    },
+    {
+        "nome": "Joaquina Souza",
+        "saldo": "25990"
+    },
+    {
+        "nome": "Claudio Antonio Marcio",
+        "saldo": "546242"
+    },
+    {
+        "nome": "Luiz Inacio da Silva",
+        "saldo": "13245678"
+    },
+    {
+        "nome": "Mariana Bueno",
+        "saldo": "32465.56"
+    },
+    {
+        "nome": "Terezinha de Jesus",
+        "saldo": "6546.50"
+    },
+    {
+        "nome": "Janaina Correia",
+        "saldo": "5478900"
+    },
+    {
+        "nome": "Moacir Maciel",
+        "saldo": "5648795"
+    }
+]
