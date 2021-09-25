@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Endereço</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            max-width: 80%;
+            min-height: 500px;
+            margin: 0 auto;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 20px 5px rgb(116, 110, 110);
+        }
+
+        div.field {
+            margin: 0 auto;
+            background-color: rgb(193, 191, 196);
+            box-shadow: 1px 1px 5px 3px rgb(116, 110, 110);
+            width: 98%;
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        .field label {
+            color: white;
+            text-shadow: 2px 1px 1px black;
+            margin: 5px;
+        }
+
+        .field input {
+            margin: 5px;
+            padding: 5px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            transition: 0.5s all;
+        }
+
+        .field input:focus {
+            border-radius: 6px;
+            background-color: rgb(221, 216, 216);
+            padding: 6px;
+        }
+
+        input[name="zipcode"] {
+            width: 30%;
+        }
+
+        .field.street {
+            flex-direction: row;
+        }
+
+        input[name="street"] {
+            width: 90%;
+        }
+        .field div:first-child {
+            width: 100%;
+        }
+        .field div {
+            display: flex;
+            width: 100%;
+        }
+        .save {
+            padding: 10px;
+            margin: 5px;
+            width: 100%;
+            max-width: 50%;
+            align-self: center;
+            border-radius: 5px;
+            border: none;
+            background: green;
+            color: white;
+            font-weight: bold;
+            font-size: 14pt;
+            text-shadow: 1px 1px 1px black;
+            box-shadow: 1px 1px 1px 3px rgb(116, 114, 114);
+            cursor: pointer;
+            transition: 0.3s all;
+        }
+        .save:hover {
+            box-shadow: none;
+            background: rgb(70, 123, 70);
+            color: rgb(197, 192, 192);
+            font-size: 13pt;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Cadastro de Endereço</h1>
+    <form id="address">
+        <div class="field">
+            <label for="zipcode">CEP:</label>
+            <input type="text" name="zipcode" value="88095572" id="zipcode">
+        </div>
+        <div class="field street">
+            <label for="street">Rua:</label>
+            <input type="text" name="street" id="street">
+            <label for="number">Nº:</label>
+            <input type="number" name="number" id="number">
+        </div>
+        <div class="field">
+            <div>
+                <label for="city">Cidade:</label>
+                <input type="text" name="city" id="city">
+            </div>
+            <div>
+                <label for="state">Estado:</label>
+                <input type="text" name="state" id="state">
+                <label for="country">País:</label>
+                <input type="text" name="country" id="country">
+            </div>
+        </div>
+        <div class="field ">
+            <button class="save">Salvar</button>
+        </div>
+    </form>
+    <script src="./Address.js"></script>
+    <script src="./functions.js"></script>
+    <script>
+        let form = document.querySelector('#address')
+        const zipcodeField = document.querySelector('#zipcode')
+        let street = document.querySelector('#street')
+        let streetNumber = document.querySelector('#number')
+        let city = document.querySelector('#city')
+        let state = document.querySelector('#state')
+        let country = document.querySelector('#country')
+        zipcodeField.addEventListener('blur', function (event) {
+            const value = event.target.value
+            if(value === '') return
+            if(value.length !== 8) return
+            const urlViaCep = `https://viacep.com.br/ws/${value}/json/`
+            fetch(urlViaCep).then(response => {
+                return response.json()
+                }).then(data => loadDataZipcode(data))
+        })
+        form.addEventListener('submit', function (event) {
+            event.preventDefault()
+            const address = new Address(street.value, number.value, city.value, state.value, country.value, zipcode.value)
+            console.log(address)
+        })
+       
+    </script>
+</body>
+</html>
