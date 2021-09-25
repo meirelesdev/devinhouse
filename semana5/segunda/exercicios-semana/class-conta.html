@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Cadastrar Endereço</title>
+</head>
+
+<body>
+    <header>
+        <h1>Cadastro de Cliente</h1>
+        <nav>
+            <a href="./index.html">Home</a>
+            <a href="./loading.html">Clientes</a>
+            <a href="./class-endereco.html">Cadastro Endereço</a>
+            <a href="./investidores.html">Lista Top 5 Investidores</a>
+        </nav>
+    </header>
+    <form id="account">
+        <p>A classe Conta aparecerá instaciada no console e o código pode ser acessado clicando <a
+                href="https://github.com/meirelesdev/devinhouse/blob/main/semana5/segunda/exercicios-semana/Cliente.js"
+                target="_blank">AQUI</a></p>
+        <div class="field">
+            <label for="accountNumber">Nº Conta:</label>
+            <input type="text" name="accountNumber" id="accountNumber" readonly>
+            <label for="clientName">Nome Cliente:</label>
+            <input type="text" name="clientName" id="clientName">
+            <label for="balance">Saldo:</label>
+            <input type="text" name="balance" id="balance">
+        </div>
+        <div class="field ">
+            <button class="save">Salvar</button>
+        </div>
+    </form>
+    <script src="./Account.js"></script>
+    <script src="./functions.js"></script>
+    <script>
+        let accountNumber = document.querySelector('#accountNumber')
+        let clientName = document.querySelector('#clientName')
+        let balance = document.querySelector('#balance')
+        const form = document.querySelector('#account')
+        accountNumber.value = generateNumber()
+        
+        form.addEventListener('submit', function (event) {
+            event.preventDefault()
+            let valueAccountNumber = accountNumber.value
+            let valueClientName = clientName.value
+            let valueBalance = balance.value
+            if(valueAccountNumber === '', valueClientName === '', valueBalance === '') return
+            const account = new Account(valueAccountNumber, valueBalance, valueClientName)
+            console.log(account)
+            clearFieldsAccount([accountNumber, clientName, balance])
+        })
+
+    </script>
+</body>
+
+</html>

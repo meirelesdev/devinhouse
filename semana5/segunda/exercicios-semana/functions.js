@@ -21,3 +21,11 @@ function clearFieldsClient(fields = []) {
         field.value = ''
     })
 }
+function clearFieldsAccount(fields = []) {
+    fields.forEach((field)=>{
+        field.value = ''
+    })
+}
+function generateNumber(){
+    return Math.floor(Math.random() * 1000).toString().padStart(5, '0')
+}

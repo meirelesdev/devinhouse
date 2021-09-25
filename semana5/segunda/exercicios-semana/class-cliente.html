@@ -15,6 +15,7 @@
             <a href="./loading.html">Clientes</a>
             <a href="./class-endereco.html">Cadastro Endereço</a>
             <a href="./investidores.html">Lista Top 5 Investidores</a>
+            <a href="./class-conta.html">Criar Conta</a>
         </nav>
     </header>
     <form id="address">
@@ -80,6 +81,7 @@
             const foneNumber = document.querySelector('#foneNumber')
             const address = new Address(street.value, number.value, city.value, state.value, country.value, zipcode.value)
             const client = new Cliente(name, cpf, foneNumber, address)
+            console.log(client)
             clearFieldsClient([name, cpf, foneNumber])
         })
                
