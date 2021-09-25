@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,12 +23,11 @@
             background-color: cadetblue;
             padding: 15px;
         }
-
         h1 {
             color: cornflowerblue;
             text-shadow: 1px 1px 5px white;
+            text-align: center;
         }
-
         nav a {
             text-decoration: none;
             color: cornflowerblue;
@@ -40,7 +38,6 @@
             border-radius: 5px;
             transition: 0.3s all;
         }
-
         nav a:hover {
             color: rgb(124, 156, 216);
             text-shadow: 1px 1px 3px rgb(104, 99, 99);
@@ -56,19 +53,13 @@
         }
     </style>
 </head>
-
 <body>
     <header>
         <h1>Seu Banco Digital</h1>
         <nav>
-            <a href="#investidores">Possiveis Investidores</a>
             <a href="#clientes">Clientes</a>
         </nav>
     </header>
-    <section id="investidores">
-        <h1>Investidores</h1>
-        <div class="conteudo"></div>
-    </section>
     <section id="clientes">
         <h1>Clientes</h1>
         <div class="conteudo"></div>
@@ -78,32 +69,24 @@
          fetch("./clientes.json").then(response => response.json()).then(json => {
              clients = json
              let divCliente = document.querySelector('#clientes .conteudo')
-             let divInvestidores = document.querySelector('#investidores .conteudo')
              clients.forEach((client, index)=> {
-                 let h2 = document.createElement('h2')
+                 let h4 = document.createElement('h4')
                  let strong = document.createElement('strong')
-                 h2.innerHTML = `Nome:<br> ${client.name}<hr>`
+                 h4.innerHTML = `Nome:<br> ${client.name}<hr>`
                  strong.innerHTML = `Saldo: ${client.balance}`
-                 divCliente.appendChild(h2)
+                 divCliente.appendChild(h4)
                  divCliente.appendChild(strong)
+                 if((clients.length -1) === index){
+                     let pAvido = document.createElement('p')
+                     pAvido.style = 'padding: 10px; text-align: center;'
+                     pAvido.innerHTML = 'Ultimo Cliente impresso em tela.'
+                    divCliente.appendChild(pAvido)
+                 }
              })
-             const topInvetidores = clients.sort((client1, client2)=>{
-                 return (client1.balance > client2.balance) ? -1 : 1
-             })
-             topFive = topInvetidores.slice(0,5)
-             topFive.forEach((invest, index) =>{
-                 let h2 = document.createElement('h2')
-                 let pSaldo = document.createElement('p')
-                 let pNome = document.createElement('p')
-                 h2.innerHTML = `Top ${index +1}º  Investidor`
-                 pNome.innerHTML = `<strong>${invest.name}</strong>`
-                 pSaldo.innerHTML = `Saldo: ${invest.balance}`
-                 divInvestidores.appendChild(h2)
-                 divInvestidores.appendChild(pNome)
-                 divInvestidores.appendChild(pSaldo)
-             })
+           
+             console.log(topFive)
+             console.log(topInvetidores)
          });
     </script>
 </body>
-
 </html>
