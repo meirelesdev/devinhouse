@@ -24,7 +24,7 @@
             <label for="name">Nome Completo:</label>
             <input type="text" name="name" id="name">
             <label for="cpf">CPF:</label>
-            <input type="text" name="cpf" id="cpf">
+            <input type="text" name="cpf" id="cpf" value="04583959940">
             <label for="foneNumber">Telefone Celular:</label>
             <input type="text" name="foneNumber" id="foneNumber">
         </div>
@@ -80,7 +80,16 @@
             const cpf = document.querySelector('#cpf')
             const foneNumber = document.querySelector('#foneNumber')
             const address = new Address(street.value, number.value, city.value, state.value, country.value, zipcode.value)
-            const client = new Cliente(name, cpf, foneNumber, address)
+            let client = {}
+            try{
+                client = new Cliente(name.value, cpf.value, foneNumber.value, address)
+            }catch(e) {
+                if(!document.querySelector('.error')){
+                    cpf.insertAdjacentHTML('afterend', `<div class="error">CPF Inválido</div>`)
+                }
+                cpf.value = ''
+                return
+            }
             console.log(client)
             clearFieldsClient([name, cpf, foneNumber])
         })
