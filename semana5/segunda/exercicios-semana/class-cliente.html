@@ -90,6 +90,9 @@
                 cpf.value = ''
                 return
             }
+            if(document.querySelector('.error')){
+                document.querySelector('.error').remove()
+            }
             console.log(client)
             clearFieldsClient([name, cpf, foneNumber])
         })
