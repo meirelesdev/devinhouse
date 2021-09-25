@@ -9,3 +9,15 @@ function loading(){
     city.value = 'Carregando...'
     state.value = 'Carregando...'
 }
+function clearFieldsAddress() {
+    street.value = ''
+    city.value = ''
+    state.value = ''
+    streetNumber.value = ''
+}
+function clearFieldsClient(fields = []) {
+    clearFieldsAddress()
+    fields.forEach((field)=>{
+        field.value = ''
+    })
+}
