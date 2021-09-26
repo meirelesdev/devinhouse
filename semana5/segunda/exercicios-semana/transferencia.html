@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Cadastrar Endereço</title>
+</head>
+<body>
+    <header>
+        <h1>Cadastro de Cliente</h1>
+        <nav>
+            <a href="./index.html">Home</a>
+            <a href="./loading.html">Clientes</a>
+            <a href="./class-endereco.html">Cadastro Endereço</a>
+            <a href="./investidores.html">Lista Top 5 Investidores</a>
+            <a href="./class-conta.html">Criar Conta</a>
+        </nav>
+    </header>
+    <form id="address">
+        <p>A classe Transferencia aparecerá instaciada no console e o código pode ser acessado clicando <a href="https://github.com/meirelesdev/devinhouse/blob/main/semana5/segunda/exercicios-semana/Transaction.js" target="_blank">AQUI</a></p>
+    </form>
+    <script src="./Account.js"></script>
+    <script src="./Cliente.js"></script>
+    <script src="./Transaction.js"></script>
+    <script src="./functions.js"></script>
+    <script>  
+               const cliente = new Cliente('Daniel', '04583959940', '48998087316')
+               const account = new Account('0001', 1000, cliente)
+               const transf = new Transaction(account, 500)
+               console.log(transf.transferAmount(100))
+               console.log(transf.depositAmount(200))
+               console.log(transf)
+    </script>
+</body>
+</html>
