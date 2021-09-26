@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: unset;
+}
+.container {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1024px;
+}
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 100px;
+    background-color: blueviolet;
+    color: white;
+}
+.logo strong {
+    text-shadow: 1px 5px 10px black;
+    text-decoration: underline;
+    font-size: 1.5rem;
+}
+.menu a {
+    padding: 10px;   
+    background-color: rgb(54, 101, 221);
+    border-radius: 5px;
+    border: 1px solid rgb(207, 214, 71);
+    transition: 0.3s all;
+}
+.menu a:hover {
+    padding: 10px;   
+    background-color: rgb(79, 77, 74);
+    border-radius: 5px;
+    border: 1px solid rgb(34, 45, 128);
+}
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+    background-color: blueviolet;
+    color: white;
+    font-weight: bold;
+    text-shadow: 5px 1px 10px black;
+}

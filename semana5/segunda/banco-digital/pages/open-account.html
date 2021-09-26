@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/open-account.css">
+    <title>Banco DevinHouse</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1> <strong>DevinHouse</strong> Seu Banco Digital</h1>
+        </div>
+        <nav class="menu">
+            <a href="../index.html">Voltar</a>
+            <a href="./access-account.html">Acessar Sua Conta</a>
+        </nav>
+    </header>
+    <section class="banner">
+        <div class="container">
+            <form id="open-account">
+                <fieldset>
+                    <legend>Dados Pessoais</legend>
+                    <label for="name">Nome Completo:</label>
+                    <input type="text" name="name" id="name">
+                    <label for="cpf">CPF:</label>
+                    <input type="text" name="cpf" id="cpf">
+                    <label for="foneNumber">Telefone Celular:</label>
+                    <input type="text" name="foneNumber" id="foneNumber">
+                </fieldset>
+                <fieldset>
+                    <legend>Endereço</legend>
+                    <div class="field">
+                        <label for="zipcode">CEP:</label>
+                        <input type="text" name="zipcode" placeholder="88776600" id="zipcode">
+                    </div>
+                    <div class="field street">
+                        <label for="street">Rua:</label>
+                        <input type="text" name="street" id="street">
+                        <label for="number">Nº:</label>
+                        <input type="number" name="number" id="number">
+                    </div>
+                    <div class="field">
+                        <div class="city-state">
+                            <label for="city">Cidade:</label>
+                            <input type="text" name="city" id="city">
+                            <label for="state">Estado:</label>
+                            <input type="text" name="state" id="state">
+                        </div>
+                        <div>
+                            <label for="country">País:</label>
+                            <input type="text" name="country" id="country">
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Dados Iniciais</legend>
+                    <label for="accountNumber">Nº Conta:</label>
+                    <input type="text" name="accountNumber" id="accountNumber" readonly>
+                    <label for="clientName">Nome Cliente:</label>
+                    <input type="text" name="clientName" id="clientName">
+                    <label for="balance">Saldo:</label>
+                    <input type="text" name="balance" id="balance">
+                </fieldset>
+                <div class="btn-save">
+                    <button class="save">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <p>Feito com ❤️ por Daniel Meireles</p>
+    </footer>
+    <script src="./assets/js/scripts.js"></script>
+</body>
+
+</html>
