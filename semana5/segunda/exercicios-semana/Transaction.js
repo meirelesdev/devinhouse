@@ -2,6 +2,11 @@ class Transaction {
     constructor(account, transactionValue) {
         this.setAccount(account)
         this.setTransactionValue(transactionValue)
+        const date = new Date()
+        this.idTransaction = `${account.getNumber()}${date.getDate()}${date.getHours()}${date.getMinutes()}${date.getSeconds()}`
+    }
+    getIdTransaction(){
+        return this.idTransaction
     }
     getAccount() {
         return this.account
