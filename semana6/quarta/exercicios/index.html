@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercícios</title>
 </head>
+
 <body>
-    
+    <h1>Exemplos de Import/Export</h1>
+    <p id="nome"></p>
+    <script type="module">
+        import * as data from './functions.js'
+        
+        for(let value in data.obj){
+            console.log(value)
+        }
+        document.querySelector('#nome').innerHTML = data.nome ? data.nome : 'nada'
+        console.log(data.nome)
+        data.digaOla(data.nome)
+    </script>
 </body>
+
 </html>
