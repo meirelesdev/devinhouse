@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         pre {
+             padding-top: 15px;
+            background-color: gray;
+            color: rgb(92, 92, 199);
+            border-radius: 15px;
+        }
+        .resultado {
+            margin: 10px;
+            padding: 10px;
+            background-color: rgb(204, 199, 199);
+            border-radius: 15px;
+        }
+        #start {
+            background-color: seagreen;
+            border: none;
+            border-radius: 3px;
+            padding: 10px ;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ex 4</h1>
+    <p>
+        Usando o array resultante do exercício 3, utilize o método filter para criar um novo array com os clientes com idade acima de 25 anos.
+    </p>
+        <code>
+            Ex:
+            <pre>
+                Lista: [
+                    { id: 1, cliente: “João Celso de Souza”, idade: 33,"ativo":true },
+                    { id: 2, cliente: “Claudia Cipriano”, idade: 28,"ativo":true },
+                    { id: 3, cliente: “Edilene Souza Silva”, idade: 41,"ativo":true },
+                    { id: 4, cliente: “Maurício Gomes”, idade: 17,"ativo":true },
+                    { id: 5, cliente: “Claudia Cipriano”, idade: 22,"ativo":true }
+                ]
+            </pre>
+        </code>
+        <button id="start" onclick="mostrarResultado()">Iniciar</button>
+        <div class="resultado"></div>
+        <script>
+            function mostrarResultado(){
+                const divResultado = document.querySelector('.resultado')
+                divResultado.innerHTML = 'Carregando...'
+                const clientes = [
+                     { id: 1, cliente:'João Celso de Souza', idade: 33, ativo:true },
+                    { id: 2, cliente: 'Claudia Cipriano', idade: 28,ativo:true },
+                    { id: 3, cliente: 'Edilene Souza Silva', idade: 41,ativo:true },
+                    { id: 4, cliente: 'Maurício Gomes', idade: 17, ativo:true },
+                    { id: 5, cliente: 'Claudia Cipriano', idade: 22,ativo:true }
+                ]
+                const p = document.createElement('p')
+                setTimeout(()=>{
+                    divResultado.innerHTML = ''
+                    p.innerHTML = 'Lista Filtrados Maior que 25 Anos: <br>'
+                    const clientesFiltrados = clientes.filter((cliente)=>{                        
+                        return cliente.idade > 25
+                    })
+                    console.log(clientesFiltrados)
+                    p.innerHTML += `<code>${JSON.stringify(clientesFiltrados)}</code>`
+                    divResultado.append(p)
+                }, 300)
+            }
+        </script>
+</body>
+</html>

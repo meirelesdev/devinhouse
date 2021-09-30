@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         pre {
+             padding-top: 15px;
+            background-color: gray;
+            color: rgb(92, 92, 199);
+            border-radius: 15px;
+        }
+        .resultado {
+            margin: 10px;
+            padding: 10px;
+            background-color: rgb(204, 199, 199);
+            border-radius: 15px;
+        }
+        #start {
+            background-color: seagreen;
+            border: none;
+            border-radius: 3px;
+            padding: 10px ;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ex 2</h1>
+    <p>
+        Dado o seguinte array, crie um novo array utilizando o método Array.map, onde cada valor seja igual à multiplicação do valor da lista original pelo seu antecessor.
+    </p>
+        <code>
+            Ex:
+            <pre>
+                arrayOriginal: [ 2, 4, 6, 8 ]  -> arrayResultado: [ 2, 8, 24, 48 ]            
+                Lista: [ 3, 5, 7, 9, 11, 13 ]
+            </pre>
+        </code>
+        <button id="start" onclick="mostrarResultado()">Iniciar</button> <span>Lista: [ 3, 5, 7, 9, 11, 13 ]</span>
+        <div class="resultado"></div>
+        <script>
+            function mostrarResultado(){
+                const divResultado = document.querySelector('.resultado')
+                divResultado.innerHTML = 'Carregando...'
+                const dados = [ 3, 5, 7, 9, 11, 13 ]
+                const p = document.createElement('p')
+                setTimeout(()=>{
+                    divResultado.innerHTML = ''
+                    p.innerHTML = 'Lista: ['
+                    const retorno = dados.map((item, indice, original )=>{
+                        return (indice > 0) ? item * original[indice -1] : item
+                    })
+                    console.log(retorno)
+                    p.innerHTML += `${retorno.toString()}]`
+                    divResultado.append(p)
+                }, 1300)
+            }
+        </script>
+</body>
+</html>

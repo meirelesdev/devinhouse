@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         pre {
+             padding-top: 15px;
+            background-color: gray;
+            color: rgb(92, 92, 199);
+            border-radius: 15px;
+        }
+        .resultado {
+            margin: 10px;
+            padding: 10px;
+            background-color: rgb(204, 199, 199);
+            border-radius: 15px;
+        }
+        #start {
+            background-color: seagreen;
+            border: none;
+            border-radius: 3px;
+            padding: 10px ;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ex 1</h1>
+    <p>
+        Dada a seguinte lista, utilizando o método forEach, imprima no console cada um dos elementos, seguidos de seu índice, no formato "Índice - Nome”.
+    </p>
+        <code>
+            <pre>
+                [ “Banana”, “Morango”, “Maçã”, “Uva”, “Pêra” ]
+            </pre>
+        </code>
+        <button id="start" onclick="mostrarResultado()">Iniciar</button>
+        <div class="resultado"></div>
+        <script>
+            function mostrarResultado(){
+                const divResultado = document.querySelector('.resultado')
+                divResultado.innerHTML = 'Carregando...'
+                const frutas = [ 'Banana', 'Morango', 'Maçã', 'Uva', 'Pêra' ]
+                const ul = document.createElement('ul')
+                setTimeout(()=>{
+                    divResultado.innerHTML = ''
+                    frutas.forEach((fruta, indice )=>{
+                        const text = `Índice: ${indice} - Nome: ${fruta}`
+                        console.log(text)
+                        const li = document.createElement('li')
+                        li.innerHTML = text
+                        ul.appendChild(li)
+                    })
+                    divResultado.append(ul)
+                }, 1500)
+            }
+        </script>
+</body>
+</html>
