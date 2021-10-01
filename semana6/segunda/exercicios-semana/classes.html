@@ -12,7 +12,7 @@
             color: rgb(92, 92, 199);
             border-radius: 15px;
         }
-        .resultado {
+        .resultado, .resultado2 {
             margin: 10px;
             padding: 10px;
             background-color: rgb(204, 199, 199);
@@ -26,6 +26,10 @@
             color: white;
             cursor: pointer;
         }
+        code {
+            max-width: 80%;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
@@ -33,20 +37,63 @@
     <p>
         Uma classe agrupa características e comportamentos de algo, que pode ser um objeto palpável ou algo abstrato. Crie 2 classes que representam objetos reais e duas classes que representem objetos abstratos, cada uma com pelo menos 2 atributos, que serão recebidos em seus respectivos métodos construtores durante a instanciação.
     </p>
-        <button id="start" onclick="mostrarResultado()">Iniciar</button>
-        <div class="resultado"></div>
-        <script>
-            function mostrarResultado(){
-                const divResultado = document.querySelector('.resultado')
-                divResultado.innerHTML = 'Carregando...'
-                const p = document.createElement('p')
-                setTimeout(()=>{
-                    divResultado.innerHTML = ''
-                    p.innerHTML = ''
-                    p.innerHTML += ``
-                    divResultado.append(p)
-                }, 300)
-            }
-        </script>
+    <button id="start">Iniciar</button>
+    <div class="resultado"></div>
+        <code>
+            <h3>Classes de Objetos reais</h3>
+            <pre>
+                class Bola {
+                    #cor
+                    #tipo
+                    constructor(cor, tipo) {
+                        this.#cor = cor
+                        this.#tipo = tipo
+                    }
+                    toString(){
+                        return `Bola cor: ${this.#cor} do tipo: ${this.#tipo}`
+                    }
+                }
+                class Veiculo {
+                    #modelo
+                    #cor
+                    constructor(modelo, cor, ) {
+                        this.#modelo = modelo
+                        this.#cor = cor
+                    }
+                    toString(){
+                        return `Modelo: ${this.#modelo}, Cor: ${this.#cor}`
+                    }
+                }
+            </pre>
+        </code>        
+        <div class="resultado2"></div>
+        <code>
+            <h3>Classes de Objetos Abstratos</h3>
+            <pre>
+                class Clima {
+                    #temperatura
+                    #temSol
+                    constructor(temperatura, temSol){
+                        this.#temperatura = temperatura
+                        this.#temSol = temSol
+                    }
+                    toString(){
+                        return `A temperatura esta em: ${this.#temperatura} e o Sol esta ${this.#temSol ? 'Lindo': 'Escondigo'}.`
+                    }
+                }
+                class Biografia {
+                    #dono
+                    #descricao
+                    constructor(dono, descricao){
+                        this.#dono = dono
+                        this.#descricao = descricao
+                    }
+                    toString(){
+                        return `Autor: ${this.#dono} Descrição: ${this.#descricao}`
+                    }
+                }
+            </pre>
+        </code>
+        <script type="module" src="./js/main.js"></script>
 </body>
 </html>
