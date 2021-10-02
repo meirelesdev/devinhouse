@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 8 - Módulos JavaScript</title>
+    <style>
+        pre {
+            padding-top: 15px;
+            background-color: gray;
+            color: rgb(92, 92, 199);
+            border-radius: 15px;
+        }
+
+        .resultado,
+        .resultado2 {
+            margin: 10px;
+            padding: 10px;
+            background-color: rgb(204, 199, 199);
+            border-radius: 15px;
+        }
+
+        #start {
+            background-color: seagreen;
+            border: none;
+            border-radius: 3px;
+            padding: 10px;
+            color: white;
+            cursor: pointer;
+        }
+
+        code {
+            max-width: 80%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ex 8</h1>
+    <p>
+        Antigamente, o JavaScript era utilizado para adicionar pequenas interações e animações em páginas da web. Com o avanço da utilização, os scripts passaram a ficar muito grandes e complexos.
+        Posto este cenário, quais as duas maiores vantagens de se utilizar módulos no JavaScript?        
+    </p>
+    <button id="start" onclick="mostrarResposta()">Mostar Resposta</button>
+    <div class="resultado"></div>
+    <script>
+        const divResultado = document.querySelector('.resultado')
+        const btnStart = document.querySelector('#start')
+
+        function mostrarResposta() {
+            divResultado.innerHTML = 'Pensando... 🤔'
+            setTimeout(()=>{
+                divResultado.innerHTML = `A utilização de módulo ajuda na organização do código e tambem na otimização de carregamento, 
+                            pois são importados somente o que será usado pela pagina.`
+            },2000)
+        }
+        
+    </script>
+</body>
+
+</html>
