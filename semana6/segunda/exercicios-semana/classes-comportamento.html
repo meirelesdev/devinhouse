@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 7 - Classes, comportamento</title>
+    <style>
+        pre {
+            padding-top: 15px;
+            background-color: gray;
+            color: rgb(92, 92, 199);
+            border-radius: 15px;
+        }
+
+        .resultado,
+        .resultado2 {
+            margin: 10px;
+            padding: 10px;
+            background-color: rgb(204, 199, 199);
+            border-radius: 15px;
+        }
+
+        #start {
+            background-color: seagreen;
+            border: none;
+            border-radius: 3px;
+            padding: 10px;
+            color: white;
+            cursor: pointer;
+        }
+
+        code {
+            max-width: 80%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ex 7</h1>
+    <p>
+        No objeto instanciado a partir da classe abaixo, quais são os seus comportamentos?
+
+        ```
+
+        ```
+    </p>
+    <button id="start" onclick="mostarEstado()">Iniciar</button>
+    <button id="start" onclick="ligaDesliga()">Desligar/Ligar Lanterna</button>
+    <div class="resultado"></div>
+    <code>
+            <h3>Classes de Objetos reais</h3>
+            <pre>
+                class Lanterna {
+                    constructor ( lumens, estaLigada ) {
+                        this._lumens = lumens
+                        this._estaLigada = estaLigada
+                    } 
+                    ligarDesligar(){
+                        this._estaLigada = !this._estaLigada
+                    }
+                }                
+                const lanternaDeBolso = new Lanterna( 600, true )
+            </pre>
+        </code>
+    <script>
+        class Lanterna {
+            constructor(lumens, estaLigada) {
+                this._lumens = lumens
+                this._estaLigada = estaLigada
+            }
+            ligarDesligar() {
+                
+                this._estaLigada = !this._estaLigada
+            }
+        }
+        const divResultado = document.querySelector('.resultado')
+        const btnStart = document.querySelector('#start')
+        const lanternaDeBolso = new Lanterna(600, true)
+        function mostarEstado() {
+            divResultado.innerHTML = `Lanterna de Bolso: <br>
+                                        Potencia: ${lanternaDeBolso._lumens} Lumens <br>
+                                        Esta ${lanternaDeBolso._estaLigada ? 'Ligada' : 'Desligada'}<br>
+                                        E tem o comportamento de ligar e desligar.`
+        }
+        function ligaDesliga() {
+            lanternaDeBolso.ligarDesligar()
+            mostarEstado()
+        }
+    </script>
+</body>
+
+</html>
