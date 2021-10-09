@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3</title>
+</head>
+
+<body>
+    <h1>Exercicio 3</h1>
+    <p>
+        Crie uma Promise para cada situação abaixo. Utilize os callbacks abaixo para exibir o valor:
+    </p>
+    <p>Resposta: Podemos conferir as mensagens de resposta no DevTools</p>
+    <code>
+        <pre>
+            function callbackSucesso ( valor ) {
+                console.log(“Sucesso:”, valor )
+            }
+            function callbackRejeicao ( valor ) {
+                console.log(“Erro:”, valor )
+            }
+        </pre>
+    </code>
+    <p>1. Uma Promise que resolva imediatamente com o valor “Olá, mundo!”</p>
+    <p> 2. Uma Promise que rejeita imediatamente com o erro “Ops, caí no onRejected!” e seja capturada em um callback no
+        método .then</p>
+    <p>3. Uma Promise que resolva depois de 5 segundos com o valor “Olá, mundo, 5 segundos depois!”)</p>
+    <p>4. Uma Promise que rejeite 2 segundos depois com o valor “Ops, caí no catch!” e seja capturada em um método
+        .catch</p>
+</body>
+<script>
+    // Caso 1
+    let sucesso = true
+    casosUmEDois(sucesso).then(res=>{
+        callbackSucesso(res)
+    }).catch((err)=>{
+        callbackRejeicao(err)
+    })
+    // Caso 2
+    sucesso = false
+    casosUmEDois(sucesso).then(res=>{
+        callbackSucesso(res)
+    }).catch((err)=>{
+        callbackRejeicao(err)
+    })
+    // Caso 3
+    sucesso = true
+    casosTresEQuatro(sucesso).then(res=>{
+        callbackSucesso(res)
+    }).catch((err)=>{
+        callbackRejeicao(err)
+    })
+    // Caso 4
+    sucesso = false
+    casosTresEQuatro(sucesso).then(res=>{
+        callbackSucesso(res)
+    }).catch((err)=>{
+        callbackRejeicao(err)
+    })
+
+//=============== funcoes ===============
+    function casosTresEQuatro(resultado) {
+        return new Promise((resolve, reject) => {
+            if(resultado){
+                setTimeout(() => {
+                    resolve("Olá, Mundo, 5 sgundos depois!");
+                }, 5000);
+            } else {
+                setTimeout(()=>{
+                    reject("Ops, caí no catch!");
+                }, 2000)
+            }
+        });
+    }
+    function casosUmEDois(resultado) {
+        return new Promise((resolve, reject) => {
+            if(resultado){
+                resolve("Olá, Mundo!");
+            } else {
+                reject("Ops, caí no onRejected!");
+            }
+        });
+    }
+    function callbackSucesso(valor) {
+        console.log("Sucesso: ", valor)
+    }
+    function callbackRejeicao(valor) {
+        console.log("Erro: ", valor)
+    }
+</script>
+</html>
