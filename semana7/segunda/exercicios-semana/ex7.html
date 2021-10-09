@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 7</title>
+</head>
+
+<body>
+    <h1>Exercicio 7</h1>
+    <p>
+        Usando a função fetch, faça uma requisição ao endereço abaixo e, após converter o retorno para json usando o
+        método .json(), imprima o nome do personagem (response.name):
+        https://swapi.dev/api/people/4/
+    </p>
+    <p>Resposta:</p>
+    <p class="response">O nome é: </p>
+    <pre>
+        fetch("https://swapi.dev/api/people/4/")
+            .then(res=>{
+                return res.json()
+            }).then(data=>{
+                const pRes = document.querySelector('.response')
+                pRes.innerHTML += data.name
+                console.log(data.name)
+            })
+    </pre>
+</body>
+<script>
+    fetch("https://swapi.dev/api/people/4/")
+        .then(res => {
+            return res.json()
+        }).then(data => {
+            const pRes = document.querySelector('.response')
+            pRes.innerHTML += data.name
+            console.log(data.name)
+        })
+</script>
+
+</html>
