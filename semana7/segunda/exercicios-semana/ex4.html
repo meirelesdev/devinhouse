@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+</head>
+
+<body>
+    <h1>Exercicio 4</h1>
+    <p>
+        A Promise a seguir executa um código que retorna um determinado valor. Identifique se esse valor é um erro
+        (rejeição) ou um valor válido. </p>
+    <code>
+            <pre>
+                const promise = new Promise ( (callbackUm, callbackDois) => {
+                    callbackDois(“Este valor é um resolve ou um reject???”)
+                })
+            </pre>
+        </code>
+    <p>
+        Resposta: Podemos verificar que o valor é um erro, pois a função que é executada em caso de erro é o segundo
+        parâmetro da função que uma promisse recebe. O primeiro é a função executada quando a resposata for sucesso.
+    </p>
+</body>
+
+</html>
