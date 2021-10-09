@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 6</title>
+</head>
+
+<body>
+    <h1>Exercicio 6</h1>
+    <p>
+        Crie uma função que retorne uma Promise que resolve após 3 segundos com o objeto abaixo.
+    </p>
+    <pre>
+        const credentials = {
+            username: “usuario”,
+            email: “usuario@email.com”,
+            authorized: true
+         }
+    </pre>
+    <p>
+        Resposta: O retorno da função pode ser observado no DevTools
+    <pre>
+        function getAuth() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve({username: "Daniel",email: "daniel_m_nascimento@estudante.sesisenai.org.br",authorized: true})
+                }, 3000);
+            });
+        }
+        function showResult(res){
+            console.log(res)
+        }
+        getAuth().then(showResult)
+    </pre>
+    </p>
+
+</body>
+<script>
+    function getAuth() {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve({username: "Daniel",email: "daniel_m_nascimento@estudante.sesisenai.org.br",authorized: true})
+            }, 3000);
+        });
+    }
+    function showResult(res){
+        console.log(res)
+    }
+    getAuth().then(showResult)    
+</script>
+</html>
