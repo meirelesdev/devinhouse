@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exercicio 1</h1>
+    <p>
+        Levando em consideração o que estudamos em sala de aula, qual será a ordem de execução dos console.log abaixo?
+    </p>
+    <p>Responsta: A execução pode ser visualizada no console do Dev tools.<br>
+        <span>primeiro</span>
+        <span>quinto</span>
+        <span>segundo</span>
+        <span>quarto</span>
+        <span>terceiro</span>
+    </p>
+    <code>
+        <pre>
+            console.log(“primeiro”)
+            setTimeout(console.log, 0, “segundo”)
+            setTimeout(console.log, 2, “terceiro”)
+            setTimeout(console.log, 1, “quarto”)
+            console.log(“quinto”)
+        </pre>
+    </code>
+<script>
+    console.log("primeiro")
+    setTimeout(console.log, 0, "segundo")
+    setTimeout(console.log, 2, "terceiro")
+    setTimeout(console.log, 1, "quarto")
+    console.log("quinto")
+</script>
+</body>
+</html>
