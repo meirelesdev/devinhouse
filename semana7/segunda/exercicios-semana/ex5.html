@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+</head>
+
+<body>
+    <h1>Exercicio 5</h1>
+    <p>
+        O objeto Promise tem dois métodos estáticos que podem ser chamados para retornarem ou rejeitarem imediatamente um valor. Quais são esses métodos estáticos? Cite um exemplo com cada um.
+        Dica: métodos estáticos são diferentes de métodos de instância, e não usamos a palavra reservada “new” para chamá-los.
+    </p>    
+    <p>
+        Resposta: São o Promise.Resolve() e Promise.Reject()
+    </p>
+        <pre>
+            Promise.resolve("Ola mundo").then(res=>{
+                console.log("Sucesso:", res)
+            })
+            Promise.reject("Ops, Deu algo errado").catch(err=>{
+                console.log("Erro:", err)
+            })
+        </pre>
+
+</body>
+    <script>
+        Promise.resolve("Ola mundo").then(res=>{
+            console.log("Sucesso:", res)
+        })
+        Promise.reject("Ops, Deu algo errado").catch(err=>{
+            console.log("Erro:", err)
+        })
+    </script>
+</html>
