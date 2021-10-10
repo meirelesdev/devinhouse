@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8</title>
+</head>
+
+<body>
+    <h1>Exercicio 8</h1>
+    <p>
+        No exercício 6, você criou uma função que retornava uma promise que resolvia, após 3 segundos, com um objeto converta esta função para a forma async / await.
+    </p>
+    <p>Resposta:</p>
+    <p class="response"></p>
+    <pre>
+        function getAuth() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve({username: "Daniel",email: "daniel_m_nascimento@estudante.sesisenai.org.br",authorized: true})
+                }, 3000);
+            });
+        }
+        async function showResult(res){
+            const divResponse = document.querySelector('.response')
+            divResponse.innerHTML = 'Consultando aguarde...'
+            const credentials =  await getAuth()
+            divResponse.innerHTML = JSON.stringify(credentials)
+            console.log(credentials)
+        }
+        showResult()
+    </pre>
+</body>
+<script>
+    function getAuth() {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve({username: "Daniel",email: "daniel_m_nascimento@estudante.sesisenai.org.br",authorized: true})
+            }, 3000);
+        });
+    }
+    async function showResult(res){
+        const divResponse = document.querySelector('.response')
+        divResponse.innerHTML = 'Consultando aguarde...'
+        const credentials =  await getAuth()
+        divResponse.innerHTML = JSON.stringify(credentials)
+        console.log(credentials)
+    }
+    showResult()
+</script>
+
+</html>
