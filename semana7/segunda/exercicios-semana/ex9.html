@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 9</title>
+</head>
+
+<body>
+    <h1>Exercicio 9</h1>
+    <p>
+        No exercício 7, você consome um webservice utilizando a função fetch, que retorna uma promise. Converta o seu código para utilizar async / await.
+        Lembre-se: precisamos de uma função assíncrona para aguardar o retorno de uma Promise.
+    </p>
+    <p>Resposta:</p>
+    <p class="response"></p>
+    <h2>Codigo em execução.</h2>
+    <pre>
+        async function getPeople(id = '4'){
+            const pRes = document.querySelector('.response')
+            const data = await fetch(`https://www.swapi.tech/api/people/${id}/`)
+            const response = await data.json()
+            if(response.message == 'ok') {
+                const name = response.result.properties.name
+                pRes.innerHTML += "O nome é "+name
+                return true
+            } 
+            pRes.innerHTML = 'Erro na consulta a API.'
+        }
+        getPeople()
+    </pre>
+</body>
+<script>
+    async function getPeople(id = '4'){
+        const pRes = document.querySelector('.response')
+        const data = await fetch(`https://www.swapi.tech/api/people/${id}/`)
+        const response = await data.json()
+        if(response.message == 'ok') {
+            const name = response.result.properties.name
+            pRes.innerHTML += "O nome é "+name
+            return true
+        } 
+        pRes.innerHTML = 'Erro na consulta a API.'
+    }
+    getPeople()
+</script>
+
+</html>
