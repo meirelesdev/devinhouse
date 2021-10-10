@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10</title>
+</head>
+
+<body>
+    <h1>Exercicio 10</h1>
+    <p>
+        Utilizando async / await, crie uma função que faça uma requisição HTTP com a função fetch no endereço https://swapi.dev/api/films/ e, usando um forEach, imprime no console o nome de cada um dos filmes.
+        Dica: a lista de filmes é retornada dentro de uma propriedade da resposta chamada “results”, e cada objeto do filme possui uma propriedade chamada “title” ( para cada filme em “results”, imprima filme.title …)
+    </p>
+    <p>Resposta:</p>
+    <p class="response"></p>
+    <h2>Codigo em execução.</h2>
+    <pre>
+    </pre>
+</body>
+<script>
+    async function getMovies(){
+        const pRes = document.querySelector('.response')
+        const data = await fetch(`https://www.swapi.tech/api/films`)
+        const response = await data.json()
+        if(response.message == 'ok') {
+            const [ ...movies ] =response.result
+            const ul = document.createElement('ol')
+            movies.forEach(movie => {
+                const li = document.createElement('li')
+                const title = document.createElement('h3')
+                const movieTitle = `${movie.description} -- ${movie.properties.title}.`
+                console.log(movieTitle)
+                title.innerHTML = movieTitle
+                li.append(title)
+                ul.appendChild(li)
+            });
+            pRes.appendChild(ul)
+            console.log(movies)
+            return 
+        }
+        pRes.style = 'color: red;'
+        pRes.innerHTML = 'Erro na consulta a API.'
+    }
+    getMovies()
+</script>
+
+</html>
