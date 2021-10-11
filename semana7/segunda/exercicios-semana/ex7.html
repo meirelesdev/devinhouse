@@ -18,14 +18,18 @@
     <p>Resposta:</p>
     <p class="response">O nome é: </p>
     <pre>
-        fetch("https://swapi.dev/api/people/4/")
-            .then(res=>{
-                return res.json()
-            }).then(data=>{
-                const pRes = document.querySelector('.response')
-                pRes.innerHTML += data.name
-                console.log(data.name)
-            })
+        fetch("https://swapi.dev/api/people/4")
+        .then(res => {
+            return res.json()
+        }).then(data => {
+            const pRes = document.querySelector('.response')
+            pRes.innerHTML += data.name
+            console.log(data.name)
+        }).catch(erro=>{
+            const pRes = document.querySelector('.response')
+            pRes.style = 'color: red;'
+            pRes.innerHTML ="Erro ao tentar acessar a API: "+ erro
+        })
     </pre>
 </body>
 <script>
